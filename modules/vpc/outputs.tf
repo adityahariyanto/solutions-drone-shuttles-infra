@@ -1,5 +1,5 @@
 output "network" {
-  value = module.network.name
+  value = module.vpc.network_name
 }
 
 output "subnet" {
