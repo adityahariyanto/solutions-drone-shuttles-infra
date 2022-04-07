@@ -16,7 +16,6 @@ module "vpc" {
 module "cloud_run" {
   source = "../../modules/cloud_run"
   project = var.project
-  env     = local.env
   locations = var.locations
   image = var.image
 }
