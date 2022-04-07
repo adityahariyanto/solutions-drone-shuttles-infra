@@ -13,7 +13,7 @@ module "cloud_run" {
   }
 }
 
-resource "google_compute_global_adress" "ip" {
+resource "google_compute_global_address" "ip" {
   name = "${var.env}-service-ip"
 }
 
