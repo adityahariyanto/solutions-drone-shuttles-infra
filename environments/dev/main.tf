@@ -20,3 +20,9 @@ module "cloud_run" {
   locations = var.locations
   image     = var.image
 }
+
+module "firewall" {
+  source  = "../../modules/firewall"
+  project = var.project
+  subnet  = module.vpc.subnet
+}
