@@ -7,4 +7,8 @@ module "cloud_run" {
   project_id   = var.project
   location     = each.key
   image        = var.image
+  ports = {
+      "name": "http1"
+      "port": 2368
+  }
 }
