@@ -20,7 +20,7 @@ module "cloud_run" {
   env             = local.env
   locations       = var.locations
   image           = var.image
-  connection_name = module.cloud_sql.connection_name
+#   connection_name = module.cloud_sql.connection_name
 }
 
 module "firewall" {
@@ -29,6 +29,6 @@ module "firewall" {
   network = module.vpc.network
 }
 
-module "cloud_sql" {
-  source = "../../modules/cloud_sql"
-}
+# module "cloud_sql" {
+#   source = "../../modules/cloud_sql"
+# }

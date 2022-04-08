@@ -16,11 +16,11 @@ module "cloud_run" {
     "run.googleapis.com/ingress" : "internal-and-cloud-load-balancing"
   }
 
-  template_annotations = {
-    "run.googleapis.com/cloudsql-instances" = var.connection_name
-    "run.googleapis.com/client-name"        = "terraform"
+#   template_annotations = {
+#     "run.googleapis.com/cloudsql-instances" = var.connection_name
+#     "run.googleapis.com/client-name"        = "terraform"
 
-  }
+#   }
 }
 
 resource "google_compute_global_address" "ip" {
