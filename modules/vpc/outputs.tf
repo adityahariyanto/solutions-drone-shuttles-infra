@@ -1,5 +1,5 @@
 output "network" {
-  value = module.vpc.network_name
+  value = google_compute_network.network.name
 }
 
 output "subnet" {

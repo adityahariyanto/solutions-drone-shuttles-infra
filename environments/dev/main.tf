@@ -7,10 +7,11 @@ provider "google" {
 }
 
 module "vpc" {
-  source  = "../../modules/vpc"
-  project = var.project
-  env     = local.env
-  region  = var.region
+  source    = "../../modules/vpc"
+  project   = var.project
+  env       = local.env
+  region    = var.region
+  locations = var.locations
 }
 
 module "cloud_run" {
@@ -24,5 +25,5 @@ module "cloud_run" {
 module "firewall" {
   source  = "../../modules/firewall"
   project = var.project
-  subnet  = module.vpc.subnet
+  network  = module.vpc.network
 }
