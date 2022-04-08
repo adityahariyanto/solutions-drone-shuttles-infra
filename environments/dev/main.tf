@@ -21,6 +21,10 @@ module "cloud_run" {
   locations       = var.locations
   image           = var.image
 #   connection_name = module.cloud_sql.connection_name
+  depends_on = [
+    module.vpc,
+    module.firewall
+  ]
 }
 
 module "firewall" {
