@@ -14,18 +14,20 @@ module "subnet_addrs" {
 
 module "vpc" {
   source   = "terraform-google-modules/network/google"
-  for_each = module.subnet_addrs.network_cidr_blocks
+#   for_each = module.subnet_addrs.network_cidr_blocks
 
   project_id   = var.project
   network_name = "${var.env}-network"
 
 
   subnets = [
-    {
-      subnet_name   = each.key
-      subnet_ip     = each.value
-      subnet_region = element(split("-", each.key), 2)
+      for n in module.subnet_addrs.networks : {
+      subnet_name   = n.name
+      subnet_ip     = n.cidr_block
+      subnet_region = element(split("-", n.name), 2)
     }
+
+    if n.cidr_block != null
   ]
 
   secondary_ranges = {
