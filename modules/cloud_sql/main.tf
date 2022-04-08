@@ -1,5 +1,5 @@
 resource "google_sql_database_instance" "mysql_db" {
-  name             = "my-db2"
+  name             = "my-db3"
   database_version = "MYSQL_5_7"
   region           = "europe-west6"
 
@@ -8,7 +8,7 @@ resource "google_sql_database_instance" "mysql_db" {
   }
 }
 
-resource "google_sql_database" "database" {
-  name     = "ghost"
-  instance = google_sql_database_instance.mysql_db.name
-}
+# resource "google_sql_database" "database" {
+#   name     = "ghost"
+#   instance = google_sql_database_instance.mysql_db.name
+# }
