@@ -1,5 +1,5 @@
 resource "google_compute_firewall" "allow-http" {
-  name    = "${local.network}-allow-http"
+  name    = "${var.network}-allow-http"
   network = var.network
   project = var.project
 

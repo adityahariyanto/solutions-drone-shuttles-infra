@@ -19,7 +19,7 @@ module "vpc" {
   project_id   = var.project
   network_name = "${var.env}-network"
   
-  for_each = module.subnet_addrs.network
+  for_each = module.subnet_addrs.networks
   subnets = [
     {
       subnet_name   = each.key
