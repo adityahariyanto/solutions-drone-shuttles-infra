@@ -1,5 +1,5 @@
 resource "google_sql_database_instance" "mysql_db" {
-  name             = "my-db"
+  name             = "my-db2"
   database_version = "MYSQL_5_7"
   region           = "europe-west6"
 
