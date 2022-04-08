@@ -17,7 +17,7 @@ module "cloud_run" {
   }
 
   template_annotations = {
-    "run.googleapis.com/cloudsql-instances" = module.cloud_sql.connection_name
+    "run.googleapis.com/cloudsql-instances" = var.connection_name
     "run.googleapis.com/client-name"        = "terraform"
 
   }

@@ -10,5 +10,5 @@ resource "google_sql_database_instance" "mysql_db" {
 
 resource "google_sql_database" "database" {
   name     = "ghost"
-  instance = google_sql_database_instance.instance.name
+  instance = google_sql_database_instance.mysql_db.name
 }

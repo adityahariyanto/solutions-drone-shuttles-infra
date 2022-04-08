@@ -15,11 +15,12 @@ module "vpc" {
 }
 
 module "cloud_run" {
-  source    = "../../modules/cloud_run"
-  project   = var.project
-  env       = local.env
-  locations = var.locations
-  image     = var.image
+  source          = "../../modules/cloud_run"
+  project         = var.project
+  env             = local.env
+  locations       = var.locations
+  image           = var.image
+  connection_name = module.cloud_sql.connection_name
 }
 
 module "firewall" {
