@@ -27,7 +27,7 @@ module "vpc" {
     for n in module.subnet_addrs.networks : {
       subnet_name   = n.name
       subnet_ip     = n.cidr_block
-      subnet_region = element(split("-", n.name), 2)
+      subnet_region = "${element(split("-", n.name), 2)}-${element(split("-", n.name), 3)}"
     }
 
     if n.cidr_block != null
